@@ -31,6 +31,24 @@
                 
                 ?>
 
+
+                    $sql = "SELECT * FROM table_details WHERE restaurantid = '$id' AND floornum=$floorid;";
+
+                    $result = query($sql);
+                    if(num_rows($result)>0){
+                        while($row = fetch_array($result)){
+                            echo'<div class = row>';
+                                if(chairnum = 2 )
+                                 echo <div class = "table layout 1">
+                                
+                                elseif chairnum =4
+                                 echo layout 2
+
+                                
+
+
+
+
                 
             </div>
             <h2>Recommendations</h2>

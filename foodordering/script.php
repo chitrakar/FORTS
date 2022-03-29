@@ -78,28 +78,28 @@ cart_checkout();
 	}
 
 	// getLocation();
-	$(document).on('click','#getlocation',function(){
-		getLocation();
-	})
-	function getLocation(){
-		let total = $('#total').attr('data-id');
-		if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(position=>{
-            long = position.coords.longitude;
-			lat = position.coords.latitude;
+	// $(document).on('click','#checkout',function(){
+	// 	checkout();
+	// })
+	// function checkout(){
+	// 	let total = $('#total').attr('data-id');
+	// 	if(navigator.geolocation){
+    //     navigator.geolocation.getCurrentPosition(position=>{
+    //         long = position.coords.longitude;
+	// 		lat = position.coords.latitude;
 			
-		$.ajax({
-			url: "action.php",
-			method: "POST",
-			data: {location:1,lat:lat,long:long,total:total},
-			success: function(data){
-				$("#location").html(data);
-			}
-		})
-		});
+	// 	$.ajax({
+	// 		url: "action.php",
+	// 		method: "POST",
+	// 		data: {checkout:1,lat:lat,long:long,total:total},
+	// 		success: function(data){
+	// 			$("#checkout_div").html(data);
+	// 		}
+	// 	})
+	// 	});
 		
-		}
-	}
+	// 	}
+	// }
 
 	
 
@@ -156,7 +156,6 @@ $("body").delegate(".remove","click",function(){
 			}
 		})
 	})
-
 
 
 

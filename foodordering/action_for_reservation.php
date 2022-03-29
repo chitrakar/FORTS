@@ -23,7 +23,8 @@
             }
            $data .= ' <div class="col-lg-6 col-lg-offset-3">
            <div class="thumbnail">
-               Restaurant Name: <code>'.$rname.'</code><br>
+           <h2 align="center" style:"color:Red">Restaurant Name: <code>'.$rname.'</code></h2><br>
+               Table Number: <code>'.$r['table_id'].'</code><br>
                Rervation Date: <code>'.$r['reservation_date'].'</code><br>
                Reservation Time: <code>'.$r['reservationTime'].'</code><br>
                Phone Number: <code>'.$r['phone'].'</code><br>
@@ -40,9 +41,16 @@
     // canceling reservation
     if(isset($_POST['cancel'])){
         $rid = $_POST['rid'];
-        $sql = "DELETE FROM `reservation_detail` WHERE `id`='$rid'";
-        $result = $con->query($sql);
+        $sql = "SELECT table_id FROM reservation_detail WHERE `id`='$rid'";
+        $record = mysqli_query($con,$sql);
+        $table_id = mysqli_fetch_row($record);
+        
+        $sql1 = "DELETE FROM reservation_detail WHERE `id`='$rid'";
+        $sql2= "UPDATE table_detail SET `status`=0 WHERE id='$table_id[0]' ";
+        $con->query($sql1);
+        $con->query($sql2);
         echo 'Reservation Cancelled Successfully';
+
         
     }
 ?>

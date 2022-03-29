@@ -103,30 +103,22 @@
                         
 					</div>
                     <div class="col-md-4">
-                        <div id="location" style="display: inline-block"></div>
-                        <button class="btn btn-sm btn-warning" id="getlocation">Give Location</button>
+                        <div id="checkout_div"></div>
+                        <a class="btn btn-success" name="checkout" id="checkout" href= "confirm_order.php?total='.$total.'"> Check Out</a>
                     </div>
                 </div>
-					<div class="row">
-						<div class="col-md-8"><input id="long" type="hidden" value=""><input id="lat" type="hidden" value=""></div>
-                        <div class="col-md-4">
-                            <div id="location" style="display: inline-block"></div>
-							<button class="btn btn-primary" onclick="window.print();"><i class="glyphicon glyphicon-print"></i> Print</button>
-						</div>
-                       
-					</div>
 
 
 				';
             }
             
-            //location
-            if(isset($_POST['location'])){
-                $lat = $_POST['lat'];
-                $long = $_POST['long'];
-                $total = $_POST['total'];
-                echo '<a class="btn btn-success" href="purchase.php?lat='.$lat.'&long='.$long.'&total='.$total.'"><i class="glyphicon glyphicon-floppy-saved"></i> Checkout</a>';
-            }
+            // //dine in time
+            // if(isset($_POST['checkout'])){
+            //     // $lat = $_POST['lat'];
+            //     // $long = $_POST['long'];
+            //     $total = $_POST['total'];
+            //     echo '<a class="btn btn-success" href="confirm_order.php?total='.$total.'"><i class="glyphicon glyphicon-floppy-saved"></i> Checkout</a>';
+            // }
         }
     }
 

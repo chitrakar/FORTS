@@ -144,7 +144,7 @@
                 </div>
                 <div class="row">
                       <?php
-                            $sql = "SELECT * FROM `table_detail` WHERE restaurantId ='$resid' ;";
+                            $sql = "SELECT * FROM `table_detail` WHERE restaurantId ='$resid' AND status='0';";
                             $result = $con->query($sql);
                             $i=0;
                             foreach ($result as $r) { 

@@ -73,7 +73,7 @@
 ?>
 <div class="container text-center">
   <div class="row">
-    <div class="col-lg-12"><h2 class="text-primary">Your Booking has been added. You will soon receve message of confirmation.</h2></div>
+    <div class="col-lg-12"><h2 class="text-primary">Your Booking has been added.</h2></div>
     <a href="index.php" class="btn btn-default">Continue</a>
   </div>
 </div>

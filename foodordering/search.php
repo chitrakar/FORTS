@@ -49,7 +49,7 @@
             }
         }
         else{
-            $sql = "SELECT * FROM items WHERE name LIKE '%$search%'";
+            $sql = "SELECT items.name, items.price, items.image, restaurant.rname, items.rid FROM items LEFT JOIN restaurant ON items.rid= restaurant.id WHERE name LIKE '%$search%'";
             $result = query($sql);
             if(num_rows($result)>0){
                 while($row = fetch_array($result)){
